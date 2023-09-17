@@ -1,7 +1,6 @@
 import React from 'react';
 
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
+import { CssBaseline, Grid } from '@mui/material';
 
 import Header from './components/Header/Header';
 import List from './components/List/List';
