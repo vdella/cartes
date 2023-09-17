@@ -10,4 +10,4 @@ const App = () => {
     )
 }
 
-export default App; // To be reachable by index.js.
+export default App;
