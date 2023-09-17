@@ -4,7 +4,7 @@ const List = () => {
     return (
         <div>
             <h1>
-                Hello, World!
+                List of places.
             </h1>
         </div>
     )

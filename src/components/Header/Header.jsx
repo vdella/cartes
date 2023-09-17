@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div>
             <h1>
-                Header
+                Carte
             </h1>
         </div>
     )

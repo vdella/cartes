@@ -4,7 +4,7 @@ const Map = () => {
     return (
         <div>
             <h1>
-                Hello, World!
+                Whole map.
             </h1>
         </div>
     )
