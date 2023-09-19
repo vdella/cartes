@@ -2,8 +2,8 @@ import React from 'react';
 
 // import { Autocomplete } from '@react-google-maps/api';
 
-import { AppBar, Toolbar, Typography, InputBase, Box } from '@mui/material';
-import SearchIcon from '@mui/material/Icon';
+import { AppBar, Toolbar, Typography, InputBase, Box } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
 
 import useStyles from './styles';
 
