@@ -11,7 +11,7 @@ import Map from './components/Map/Map';
 const App = () => {
     const [places, setPlaces] = useState([]);
     const [coordinates, setCoordinates] = useState({});  // Starts empty. Will be filled bellow.
-    const [bounds, setBounds] = useState(null);
+    const [bounds, setBounds] = useState({});
 
     // Once the app starts, ask for the user's actual geolocation. Deps left empty to call this effect only once.
     useEffect(() => {
