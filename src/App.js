@@ -38,13 +38,16 @@ const App = () => {
         <Header />
             <Grid container spacing={3} style={{ width: '100%' }}>
                 <Grid item xs={fullMobileWidth} md={listOfPlacesWidth}>
-                    <List places={places}/>
+                    <List
+                        places={places}
+                    />
                 </Grid>
                 <Grid item xs={fullMobileWidth} md={wholeMapWidth}>
                     <Map
                         setCoordinates={setCoordinates}
                         setBounds={setBounds}
                         coordinates={coordinates}
+                        places={places}
                     />
                 </Grid>
             </Grid>
