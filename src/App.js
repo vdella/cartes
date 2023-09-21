@@ -24,7 +24,6 @@ const App = () => {
     useEffect(() => {
         getPlacesData(bounds.ne, bounds.sw)
             .then((data) => {
-                console.log(data);
                 setPlaces(data);
             });
     }, [coordinates, bounds]);
@@ -39,7 +38,7 @@ const App = () => {
         <Header />
             <Grid container spacing={3} style={{ width: '100%' }}>
                 <Grid item xs={fullMobileWidth} md={listOfPlacesWidth}>
-                    <List />
+                    <List places={places}/>
                 </Grid>
                 <Grid item xs={fullMobileWidth} md={wholeMapWidth}>
                     <Map

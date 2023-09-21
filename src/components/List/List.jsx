@@ -5,20 +5,13 @@ import PlaceDetails from '../PlaceDetails/PlaceDetails';
 
 import useStyles from './styles';
 
-const List = () => {
+const List = ( { places }) => {
     const classes = useStyles();
 
     // Types of places and their ratings act as mapping function. They are properly called onChange
     // of their own Select component.
     const [type, setType] = useState('restaurants');
     const [rating, setRating] = useState('');
-
-    // TODO add meaningful place names with the use of an place list API.
-    const places = [
-        { name: 'Place' },
-        { name: 'Best coffee' },
-        { name: 'Best tuna' }
-    ];
 
     return (
         <div className={classes.container}>
