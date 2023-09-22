@@ -10,8 +10,12 @@ import Map from './components/Map/Map';
 
 const App = () => {
     const [places, setPlaces] = useState([]);
-    const [coordinates, setCoordinates] = useState({});  // Starts empty. Will be filled bellow.
+    const [childClicked, setChildClicked] = useState({});
+
+    const [coordinates, setCoordinates] = useState({});
     const [bounds, setBounds] = useState({});
+
+    const [isLoading, setIsLoading] = useState(false);
 
     // Once the app starts, ask for the user's actual geolocation. Deps left empty to call this effect only once.
     useEffect(() => {
@@ -20,11 +24,14 @@ const App = () => {
         });
     }, []);
 
-    // Gathers places according to map bounds.
+    // Gathers places according to map bounds. We wait for place references to load before showing their list.
     useEffect(() => {
+        setIsLoading(true);
+
         getPlacesData(bounds.ne, bounds.sw)
             .then((data) => {
                 setPlaces(data);
+                setIsLoading(false);
             });
     }, [coordinates, bounds]);
 
@@ -40,6 +47,8 @@ const App = () => {
                 <Grid item xs={fullMobileWidth} md={listOfPlacesWidth}>
                     <List
                         places={places}
+                        childClicked={childClicked}
+                        isLoading={isLoading}
                     />
                 </Grid>
                 <Grid item xs={fullMobileWidth} md={wholeMapWidth}>
@@ -48,6 +57,7 @@ const App = () => {
                         setBounds={setBounds}
                         coordinates={coordinates}
                         places={places}
+                        setChildClicked={setChildClicked}
                     />
                 </Grid>
             </Grid>
